@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More FAQ | Jon Smith</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A73E8;
+      --dark: #1F2937;
+      --light: #F9FAFB;
+      --accent: #10B981;
+      --radius: 0.5rem;
+      --transition: 0.3s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--light); line-height: 1.6; }
+
+    /* Header */
+    header { position: sticky; top: 0; background: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 10; }
+    header h1 { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    nav a { margin-left: 1.5rem; text-decoration: none; font-weight: 500; color: var(--dark); transition: color var(--transition); }
+    nav a:hover { color: var(--primary); }
+
+    /* Container & Section */
+    .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; display: grid; gap: 2rem; }
+    section { background: #fff; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 2rem; }
+    section h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; position: relative; }
+    section h2::after { content: ''; width: 4rem; height: 0.25rem; background: var(--primary); position: absolute; bottom: -0.5rem; left: 0; border-radius: var(--radius); }
+    section p { margin-bottom: 1.5rem; }
+
+    /* FAQ Styles */
+    .faq-category { font-size: 1.25rem; font-weight: 600; color: var(--primary); margin-top: 1.5rem; }
+    .faq-list { display: grid; gap: 1rem; }
+    .faq-item { background: #fff; padding: 1rem 1.5rem; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; transition: background 0.2s; position: relative; }
+    .faq-item.open { background: rgba(16,185,129,0.12); }
+    .faq-question { display: flex; align-items: center; font-weight: 600; color: var(--dark); }
+    .faq-question .triangle { margin-left: auto; transition: transform 0.2s; color: var(--accent); }
+    .faq-item.open .triangle { transform: rotate(90deg); }
+    .faq-answer { margin-top: 0.75rem; display: none; background: #F3F4F6; padding: 1rem; border-radius: calc(var(--radius) - 0.1rem); color: var(--dark); }
+
+    /* Back button */
+    .back-link { justify-self: end; text-decoration: none; font-weight: 500; color: var(--primary); }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; background: var(--dark); color: #fff; font-size: 0.875rem; }
+    .footer-legend { font-size: 0.75rem; color: #D1D5DB; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><h1>Jon Smith <span title="Chartered Manager">CMgr</span> <span title="Fellow of the Chartered Management Institute">FCMI</span> <span title="Fellow of the European Institute of Procurement">FEIP</span></h1></a>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#clients">Clients</a>
+      <a href="index.html#case-studies">Case Studies</a>
+      <a href="index.html#testimonials">Testimonials</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>More Frequently Asked Questions</h2>
+      <p>Below you'll find answers to many more questions about my consulting services.</p>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-category">General</div>
+        <div class="faq-item"><div class="faq-question">What is your background in management consulting?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I have over 15 years of experience working with organizations of all sizes across multiple industries.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you work internationally?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I work with clients globally, both remotely and on-site.</p></div></div>
+        <div class="faq-item"><div class="faq-question">What size companies do you typically work with?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I work with startups, SMEs, and large enterprises.</p></div></div>
+        <div class="faq-category">Services</div>
+        <div class="faq-item"><div class="faq-question">What consulting services do you offer?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Strategy, process optimization, change management, digital transformation, and more.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Can you help with digital transformation?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I have extensive experience guiding organizations through digital change initiatives.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you offer training for in-house teams?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Absolutely, I provide tailored training sessions for teams of all sizes.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you provide ongoing support after a project?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I offer post-project support and follow-up consultations as needed.</p></div></div>
+        <div class="faq-category">Process</div>
+        <div class="faq-item"><div class="faq-question">What is your typical project timeline?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Project timelines vary based on scope, but most engagements last from 2 weeks to 6 months.</p></div></div>
+        <div class="faq-item"><div class="faq-question">How do you approach new projects?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I start with a discovery phase to understand your unique challenges, then tailor solutions to your goals.</p></div></div>
+        <div class="faq-item"><div class="faq-question">How do you measure project success?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I use KPIs and client-defined goals to track and report on project outcomes.</p></div></div>
+        <div class="faq-item"><div class="faq-question">How do you communicate progress?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I provide regular updates via email, video calls, and shared dashboards.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Can you work with our existing team?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I collaborate closely with your team to ensure knowledge transfer and buy-in.</p></div></div>
+        <div class="faq-category">Pricing</div>
+        <div class="faq-item"><div class="faq-question">What is your fee structure?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Fees are based on project scope and duration. Contact me for a custom quote.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you offer fixed-price projects?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I can offer fixed-price or hourly billing depending on your needs.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Are there any additional costs?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>All costs are discussed upfront. Travel or special software may incur extra charges.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you require a deposit?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, a deposit is typically required to secure project dates.</p></div></div>
+        <div class="faq-category">Logistics</div>
+        <div class="faq-item"><div class="faq-question">Are you available for remote consulting?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I work with clients globally both remotely and on-site as needed.</p></div></div>
+        <div class="faq-item"><div class="faq-question">What tools do you use for remote work?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I use Zoom, Teams, Slack, and other collaboration tools as required.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Can you travel to our office?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I am available for on-site work depending on location and project needs.</p></div></div>
+        <div class="faq-item"><div class="faq-question">What are your working hours?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I am flexible and can accommodate most time zones.</p></div></div>
+        <div class="faq-item"><div class="faq-question">How soon can you start?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Start dates depend on current commitments, but I strive to be as flexible as possible.</p></div></div>
+        <div class="faq-category">Results</div>
+        <div class="faq-item"><div class="faq-question">Can you provide references from past clients?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, references are available upon request.</p></div></div>
+        <div class="faq-item"><div class="faq-question">What kind of results can I expect?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Results vary, but I focus on measurable improvements in efficiency, cost, and team performance.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you guarantee outcomes?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>While I cannot guarantee specific outcomes, I am committed to delivering value and exceeding expectations.</p></div></div>
+        <div class="faq-item"><div class="faq-question">How do you handle confidential information?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I adhere to strict confidentiality and can sign NDAs as required.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Can you help us implement your recommendations?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I can assist with both planning and implementation phases.</p></div></div>
+        <div class="faq-category">Miscellaneous</div>
+        <div class="faq-item"><div class="faq-question">Do you work with non-profits?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I have experience working with non-profit organizations.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Can you help with grant applications?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Yes, I can assist with grant writing and application processes.</p></div></div>
+        <div class="faq-item"><div class="faq-question">Do you offer pro bono work?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I occasionally take on pro bono projects for causes I am passionate about.</p></div></div>
+        <div class="faq-item"><div class="faq-question">How do I get started?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Contact me via the website form or email to schedule an initial consultation.</p></div></div>
+      </div>
+      <a href="index.html" class="back-link">&larr; Back to main site</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Jon Smith. All rights reserved.</p>
+    <p class="footer-legend">CMgr: Chartered Manager – CMI | FCMI: Fellow of the Chartered Management Institute | FEIP: Fellow of the European Institute of Procurement</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-answer').style.display = 'none';
+        });
+        if (!open) {
+          item.classList.add('open');
+          item.querySelector('.faq-answer').style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
