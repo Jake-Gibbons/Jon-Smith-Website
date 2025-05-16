@@ -42,11 +42,25 @@
     .faq-answer { margin-top: 0.75rem; display: none; background: #F3F4F6; padding: 1rem; border-radius: calc(var(--radius) - 0.1rem); color: var(--dark); }
 
     /* Back button */
-    .back-link { justify-self: end; text-decoration: none; font-weight: 500; color: var(--primary); }
-
-    /* Footer */
-    footer { text-align: center; padding: 2rem; background: var(--dark); color: #fff; font-size: 0.875rem; }
-    .footer-legend { font-size: 0.75rem; color: #D1D5DB; margin-top: 0.5rem; }
+    .back-link, .button {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+      color: #fff;
+      background: var(--primary);
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.75rem 1.5rem;
+      margin-top: 2rem;
+      transition: background var(--transition);
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .back-link:hover, .button:hover {
+      background: var(--accent);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -106,7 +120,7 @@
         <div class="faq-item"><div class="faq-question">Do you offer pro bono work?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>I occasionally take on pro bono projects for causes I am passionate about.</p></div></div>
         <div class="faq-item"><div class="faq-question">How do I get started?<span class="triangle">&#9654;</span></div><div class="faq-answer"><p>Contact me via the website form or email to schedule an initial consultation.</p></div></div>
       </div>
-      <a href="index.html" class="back-link">&larr; Back to main site</a>
+      <a href="index.html" class="back-link button">&larr; Back to main site</a>
     </section>
   </div>
 
