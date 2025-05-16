@@ -59,14 +59,35 @@
     }
 
     @media (max-width: 700px) {
-      .container { max-width: 100vw; width: 100vw; box-sizing: border-box; padding: 2rem 1rem; }
-      .container section { margin-bottom: 2rem; }
-      .about { grid-template-columns: 1fr; text-align: center; }
-      .about img { margin: 0 auto; }
-      .hero-content h2 { font-size: 2rem; }
-      section h2 { font-size: 1.5rem; }
-      .services, .case-grid { grid-template-columns: 1fr; }
-      .testimonials blockquote { min-width: 100vw; font-size: 1rem; }
+      .container { max-width: 100vw; width: 100vw; box-sizing: border-box; padding: 1rem 0.5rem; }
+      .container section { margin-bottom: 1.5rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 0.75rem 1rem; }
+      header h1 { font-size: 1.1rem; }
+      nav { width: 100%; flex-wrap: wrap; }
+      nav a { margin: 0.5rem 0.75rem 0.5rem 0; font-size: 1rem; }
+      .about { grid-template-columns: 1fr; text-align: center; gap: 1rem; }
+      .about img { margin: 0 auto; max-width: 120px; }
+      .hero-content h2 { font-size: 1.5rem; }
+      .hero-content p { font-size: 1rem; }
+      section h2 { font-size: 1.2rem; }
+      .services, .case-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .service { padding: 1rem; font-size: 0.98rem; }
+      .testimonials { max-width: 100vw; }
+      .testimonials blockquote { min-width: 100vw; font-size: 0.98rem; padding: 1rem; }
+      .carousel-arrow { width: 2rem; height: 2rem; left: 0.5rem; right: 0.5rem; opacity: 0.7; font-size: 1.1rem; }
+      .carousel-arrow.left { left: 0.5rem; }
+      .carousel-arrow.right { right: 0.5rem; }
+      .carousel-indicators { margin-top: 0.5rem; }
+      .contact-options { gap: 0.4rem; }
+      .contact-option { flex-direction: row; align-items: flex-start; padding: 0.6rem 0.7rem; font-size: 0.98rem; }
+      .contact-option-icon { font-size: 1.1em; min-width: 1.2em; }
+      .contact-form { padding: 1rem; gap: 0.7rem; }
+      .contact-form input, .contact-form textarea { padding: 0.6rem; font-size: 1rem; }
+      .contact-form button { padding: 0.6rem 1rem; font-size: 1rem; }
+      .faq-list { gap: 0.7rem; }
+      .faq-item { padding: 0.7rem 1rem; font-size: 0.98rem; }
+      footer { padding: 1rem; font-size: 0.8rem; }
+      .footer-legend { font-size: 0.7rem; }
     }
 
     section h2 { font-size: 2.25rem; font-weight: 600; margin-bottom: 1.5rem; position: relative; }
@@ -138,6 +159,7 @@
         left: 0.5rem;
         right: 0.5rem;
         opacity: 0.7;
+        font-size: 1.1rem;
       }
       .carousel-arrow.left { left: 0.5rem; }
       .carousel-arrow.right { right: 0.5rem; }
@@ -168,6 +190,30 @@
     .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); }
     .contact-form button { background: var(--primary); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius); cursor: pointer; font-weight: 500; transition: background var(--transition); }
     .contact-form button:hover { background: var(--dark); }
+
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #f1f5f9;
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      font-size: 1.05rem;
+      color: var(--dark);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .contact-option-icon {
+      font-size: 1.3em;
+      color: var(--primary);
+      min-width: 1.5em;
+      text-align: center;
+    }
 
     .faq-list { display: grid; gap: 1rem; }
     .faq-item { background: #fff; padding: 1rem 1.5rem; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; position: relative; }
@@ -272,6 +318,20 @@
 
     <section id="contact">
       <h2>Contact Me</h2>
+      <div class="contact-options">
+        <div class="contact-option">
+          <div class="contact-option-icon">📧</div>
+          <div>Email: <a href="mailto:jon.smith@example.com">jon.smith@example.com</a></div>
+        </div>
+        <div class="contact-option">
+          <div class="contact-option-icon">📞</div>
+          <div>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></div>
+        </div>
+        <div class="contact-option">
+          <div class="contact-option-icon">🔗</div>
+          <div>LinkedIn: <a href="https://www.linkedin.com/in/jon-smith" target="_blank" rel="noopener">linkedin.com/in/jon-smith</a></div>
+        </div>
+      </div>
       <form class="contact-form" action="mailto:jon.smith@example.com" method="post" enctype="text/plain">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
@@ -298,6 +358,9 @@
           <strong class="faq-question">Are you available for remote consulting?</strong>
           <div class="faq-answer"><p>Yes, I work with clients globally both remotely and on-site as needed.</p></div>
         </div>
+      </div>
+      <div style="text-align:center; margin-top:1.5rem;">
+        <button onclick="window.location.href='more-faq.html'" class="cta-button">More FAQ</button>
       </div>
     </section>
   </div>
